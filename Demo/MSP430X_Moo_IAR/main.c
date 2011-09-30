@@ -68,6 +68,26 @@ static void prvSetupHardware( void );
 
 static void prvToggleOnBoardLED( void );
 
+static void prvBeep( void );
+
+static void prvBeep (void) {
+#define COUNTERLEN 500 // ~440 Hz
+#define NUMCYCLES 250
+#define P36 0x40 // 0b01000000, pin 3.6
+    unsigned i, cyc;
+
+    P3DIR |= P36; // P3.6 is an output pin; all others are inputs
+
+    for (cyc = 0; cyc != NUMCYCLES; ++cyc) {
+        P3OUT ^= P36; // toggle P3.6
+        i = COUNTERLEN;
+        do { --i; } while (i != 0);
+    }
+
+    printf("Beep\n");                       // SW Delay
+
+}
+
 
 static void prvToggleOnBoardLED( void )
 {
@@ -85,9 +105,11 @@ static void prvToggleOnBoardLED( void )
 	}
         sState = !sState;
   */
-
-  P4OUT ^= 0x04;
-
+    
+    P4OUT ^= 0x04;
+  
+    printf("Blink\n");                       // Delay
+    
 }
 /*-----------------------------------------------------------*/
 
@@ -132,6 +154,7 @@ int main( void )
 	//vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
         
         prvToggleOnBoardLED();
+        prvBeep();
 
         /* All other functions that create tasks are commented out.
         
