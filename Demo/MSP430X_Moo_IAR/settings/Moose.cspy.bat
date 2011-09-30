@@ -10,6 +10,6 @@
 @REM 
 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\common\bin\cspybat" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430proc.dll" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430sim.dll"  %1 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430bat.dll" --backend -B "--hardware_multiplier" "16" "--hwmult_type" "2" "-p" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\config\MSP430F2618.ddf" "--core=430X" "--data_model=small" "--iv_base" "0xFFC0" "--odd_word_check" "-d" "sim" "--derivativeSim" "MSP430F2618" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\common\bin\cspybat" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430proc.dll" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430fet.dll"  %1 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\bin\430bat.dll" --backend -B "--hardware_multiplier" "16" "--hwmult_type" "2" "-p" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.0\430\config\MSP430F2618.ddf" "--core=430X" "--data_model=small" "--iv_base" "0xFFC0" "-d" "fet" "--verify_all" "--erase_main_and_info" "--derivative" "MSP430F2618" "--protocol" "4wire" "--eem" "EMEX_HIGH" "--port" "Automatic" "--connection" "ti_usb" "--settlingtime=0" "--msp430_dll" "msp430.dll" "--vccDefault" "3.3" 
 
 
