@@ -80,7 +80,6 @@ void vParTestInitialise( void )
 {
 	/* The port used by the two LEDs is configured from halBoardInit() so
 	nothing needs to be done here. */
-  //P4DIR |= 0x04; 
 	/* Used for the onboard LED. */
 	P4DIR = 0x04;
 }
@@ -157,20 +156,3 @@ void vParTestToggleLED( unsigned portBASE_TYPE uxLED )
 }
 /*-----------------------------------------------------------*/
 
-static void prvToggleOnBoardLED( void )
-{
-static unsigned portSHORT sState = pdFALSE;
-
-	/* Toggle the state of the single genuine on board LED. */
-	if( sState )	
-	{
-		P4OUT |= mainON_BOARD_LED_BIT;
-	}
-	else
-	{
-		P4OUT &= ~mainON_BOARD_LED_BIT;
-	}
-
-	sState = !sState;
-}
-/*-----------------------------------------------------------*/

@@ -3,6 +3,7 @@
 
 /* Standard includes. */
 #include <stdlib.h>
+#include <stdio.h>
 /* Scheduler includes. */
 #include "FreeRTOS.h"
 #include "task.h"
@@ -63,38 +64,32 @@ void Set_DCO(void);
  */
 static void prvSetupHardware( void );
 
-/*
-void main( void )
-    {
+#define mainON_BOARD_LED_BIT	( ( unsigned portCHAR ) 0x04 )
+
+static void prvToggleOnBoardLED( void );
+
+
+static void prvToggleOnBoardLED( void )
+{
+  /* Toggle the state of the single genuine on board LED. 
+        static unsigned portSHORT sState = pdFALSE;
       
-        volatile unsigned long ul; // volatile so it is not optimized away. 
+	
+	if( sState )	
+	{
+		P4OUT |= mainON_BOARD_LED_BIT;
+	}
+	else
+	{
+		P4OUT &= ~mainON_BOARD_LED_BIT;
+	}
+        sState = !sState;
+  */
 
-        //Initialise the LED outputs - note that prvSetupHardware() might also 
-        //have to be called! 
-        vParTestInitialise();
+  P4OUT ^= 0x04;
 
-        // Toggle the LEDs repeatedly.
-        for( ;; )
-        {
-            // We don't want to use the RTOS features yet, so just use a very 
-            //crude delay mechanism instead. 
-            for( ul = 0; ul < 0xfffff; ul++ )
-            {
-            }
-            //volatile unsigned int i;
-            //P4OUT ^= 0x04;
-            //i = 65000;
-            //do(i--);
-            //while ( i != 0);
-
-            // Toggle the first four LEDs (on the assumption there are at least 4 fitted. 
-            vParTestToggleLED( 0 );
-            vParTestToggleLED( 1 );
-        }
-
-        //return 0;
-    }
-*/
+}
+/*-----------------------------------------------------------*/
 
 
 static void prvSetupHardware( void )
@@ -119,62 +114,24 @@ static void prvSetupHardware( void )
 
 	/* Setup the IO.  This is just copied from the demo supplied by SoftBaugh
 	 for the ES449 demo board. */
-	P1SEL = 0x32;
+	//P1SEL = 0x32;
 	P2SEL = 0x00;
 	P3SEL = 0x00;
 	P4SEL = 0xFC;
 	P5SEL = 0xFF;
 }
 
-void Set_DCO(void)                          // Set DCO to selected frequency
-{
-  unsigned int Compare, Oldcapture = 0;
-
-  BCSCTL1 |= DIVA_3;                        // ACLK= LFXT1CLK/8 = 4096Hz
-  TACCTL2 = CM_1 + CCIS_1 + CAP;            // CAP, ACLK
-  TACTL = TASSEL_2 + MC_2 + TACLR;          // SMCLK, cont-mode, clear
-
-  while (1)
-  {
-    while (!(CCIFG & TACCTL2));             // Wait until capture occured
-    TACCTL2 &= ~CCIFG;                      // Capture occured, clear flag
-    Compare = TACCR2;                       // Get current captured SMCLK
-    Compare = Compare - Oldcapture;         // SMCLK difference
-    Oldcapture = TACCR2;                    // Save current captured SMCLK
-
-    if (DELTA == Compare)
-      break;                                // If equal, leave "while(1)"
-    else if (DELTA < Compare)
-    {
-      DCOCTL--;                             // DCO is too fast, slow it down
-      if (DCOCTL == 0xFF)                   // Did DCO roll under?
-        if (BCSCTL1 & 0x0f)
-          BCSCTL1--;                        // Select lower RSEL
-    }
-    else
-    {
-      DCOCTL++;                             // DCO is too slow, speed it up
-      if (DCOCTL == 0x00)                   // Did DCO roll over?
-        if ((BCSCTL1 & 0x0f) != 0x0f)
-          BCSCTL1++;                        // Sel higher RSEL
-    }
-  }
-  TACCTL2 = 0;                              // Stop TACCR2
-  TACTL = 0;                                // Stop Timer_A
-  BCSCTL1 &= ~DIVA_3;                       // ACLK = LFXT1CLK = 32.768KHz
-}
-
-
 int main( void )
     {
+      
         /* Setup the microcontroller hardware for the demo. */
-        prvSetupHardware();
-		vParTestInitialise();
+        //prvSetupHardware(); ---> this for some reason bloks the LED task but not other tasks
+	vParTestInitialise();
 
-        /* Leave this function. */
-        //vCreateFlashTasks(); 
         /* Start the standard demo application tasks. */
-		vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
+	//vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
+        
+        prvToggleOnBoardLED();
 
         /* All other functions that create tasks are commented out.
         
@@ -273,4 +230,42 @@ const unsigned short usACLK_Frequency_Hz = 32768;
 
 	/* Up mode. */
 	TA0CTL |= MC_1;
+}
+
+void Set_DCO(void)                          // Set DCO to selected frequency
+{
+  unsigned int Compare, Oldcapture = 0;
+
+  BCSCTL1 |= DIVA_3;                        // ACLK= LFXT1CLK/8 = 4096Hz
+  TACCTL2 = CM_1 + CCIS_1 + CAP;            // CAP, ACLK
+  TACTL = TASSEL_2 + MC_2 + TACLR;          // SMCLK, cont-mode, clear
+
+  while (1)
+  {
+    while (!(CCIFG & TACCTL2));             // Wait until capture occured
+    TACCTL2 &= ~CCIFG;                      // Capture occured, clear flag
+    Compare = TACCR2;                       // Get current captured SMCLK
+    Compare = Compare - Oldcapture;         // SMCLK difference
+    Oldcapture = TACCR2;                    // Save current captured SMCLK
+
+    if (DELTA == Compare)
+      break;                                // If equal, leave "while(1)"
+    else if (DELTA < Compare)
+    {
+      DCOCTL--;                             // DCO is too fast, slow it down
+      if (DCOCTL == 0xFF)                   // Did DCO roll under?
+        if (BCSCTL1 & 0x0f)
+          BCSCTL1--;                        // Select lower RSEL
+    }
+    else
+    {
+      DCOCTL++;                             // DCO is too slow, speed it up
+      if (DCOCTL == 0x00)                   // Did DCO roll over?
+        if ((BCSCTL1 & 0x0f) != 0x0f)
+          BCSCTL1++;                        // Sel higher RSEL
+    }
+  }
+  TACCTL2 = 0;                              // Stop TACCR2
+  TACTL = 0;                                // Stop Timer_A
+  BCSCTL1 &= ~DIVA_3;                       // ACLK = LFXT1CLK = 32.768KHz
 }
