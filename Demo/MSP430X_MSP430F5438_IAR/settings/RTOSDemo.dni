@@ -42,6 +42,16 @@ Enabled=0
 Mode=152238872
 Graph=0
 Symbiont=0
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
 [Breakpoints]
 Count=0
 [FET]

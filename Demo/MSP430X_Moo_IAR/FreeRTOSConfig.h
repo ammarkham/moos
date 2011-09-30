@@ -47,4 +47,13 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelay					1
 #define INCLUDE_uxTaskGetStackHighWaterMark 0
 
+/* The MSP430X port uses a callback function to configure its tick interrupt.
+This allows the application to choose the tick interrupt source.
+configTICK_VECTOR must also be set in FreeRTOSConfig.h to the correct
+interrupt vector for the chosen tick interrupt source.  This implementation of
+vApplicationSetupTimerInterrupt() generates the tick from timer B0, so in this
+case configTICK__VECTOR is set to TIMERB0_VECTOR. */
+#define configTICK_VECTOR				TIMERB0_VECTOR
+
+
 #endif /* FREERTOS_CONFIG_H */
