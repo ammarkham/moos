@@ -6,34 +6,8 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\..\..\Source\list.c</file>
       <file>$PROJ_DIR$\..\..\Source\portable\MemMang\heap_1.c</file>
       <file>$PROJ_DIR$\..\Common\Minimal\flash.c</file>
-      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\port.c</file>
-      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portext.s43</file>
-      <file>$PROJ_DIR$\..\..\Source\tasks.c</file>
-      <file>$PROJ_DIR$\FreeRTOSConfig.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\ParTest\ParTest.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\list.pbi</file>
-      <file>$PROJ_DIR$\..\..\Source\include\projdefs.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\list.r43</file>
-      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\port.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\port.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\Moose.pbd</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\portext.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\..\..\Source\include\mpu_wrappers.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\..\Common\include\flash.h</file>
-      <file>$PROJ_DIR$\..\Common\include\partest.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\ParTest.pbi</file>
-      <file>$PROJ_DIR$\..\..\Source\include\task.h</file>
-      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portmacro.h</file>
       <file>$PROJ_DIR$\..\..\Source\include\list.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
       <file>$PROJ_DIR$\..\..\Source\include\FreeRTOS.h</file>
@@ -53,8 +27,8 @@
       <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
       <file>$PROJ_DIR$\Debug\Obj\tasks.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\data_model.h</file>
       <file>$TOOLKIT_DIR$\inc\msp430f2618.h</file>
+      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\data_model.h</file>
       <file>$TOOLKIT_DIR$\config\lnk430F2618.xcl</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
@@ -66,129 +40,39 @@
       <file>$PROJ_DIR$\Debug\Obj\heap_1.r43</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
       <file>$PROJ_DIR$\Debug\Obj\flash.r43</file>
+      <file>$PROJ_DIR$\..\..\Source\list.c</file>
+      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\port.c</file>
+      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portext.s43</file>
+      <file>$PROJ_DIR$\..\..\Source\tasks.c</file>
+      <file>$PROJ_DIR$\FreeRTOSConfig.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\ParTest\ParTest.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.pbi</file>
+      <file>$PROJ_DIR$\..\..\Source\include\projdefs.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\list.r43</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\portext.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Moose.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\port.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$PROJ_DIR$\..\..\Source\include\mpu_wrappers.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\Common\include\flash.h</file>
+      <file>$PROJ_DIR$\..\Common\include\partest.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ParTest.pbi</file>
+      <file>$PROJ_DIR$\..\..\Source\include\task.h</file>
+      <file>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portmacro.h</file>
     </outputs>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 40 34</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\Source\list.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 9</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 11</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 35 53 55 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 28</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 37 35 53 55 16 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 28</file>
-        </tool>
-      </inputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\..\..\Source\portable\MemMang\heap_1.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 52</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 57</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 35 53 55 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 26 28</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 37 35 53 55 16 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 26 28</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Common\Minimal\flash.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 59</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 37 35 53 55 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 26 28 24 23</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 37 35 53 55 16 18 22 29 51 30 56 10 6 32 36 21 33 27 12 48 19 26 28 24 23</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\port.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 13</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 14</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 30 56 35 53 55 18 22 29 51 10 6 32 36 21 33 27 12 48 19 26 28</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 30 56 35 53 55 16 18 22 29 51 10 6 32 36 21 33 27 12 48 19 26 28</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portext.s43</name>
-      <outputs>
-        <tool>
-          <name>A430</name>
-          <file> 17</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>A430</name>
-          <file> 12 48 6 32 47</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\Source\tasks.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 45</file>
+          <file> 26</file>
         </tool>
         <tool>
           <name>ICC430</name>
@@ -198,43 +82,67 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 20 35 53 55 18 22 29 51 58 37 44 30 56 10 6 32 36 21 33 27 12 48 19 26 28 54 39</file>
+          <file> 11 9 27 29 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 58 2</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 20 35 53 55 16 18 22 29 51 58 37 44 30 56 10 6 32 36 21 33 27 12 48 19 26 28 54 39</file>
+          <file> 11 9 27 29 44 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 58 2</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\main.c</name>
+      <name>$PROJ_DIR$\..\Common\Minimal\flash.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 50</file>
+          <file> 15</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 46</file>
+          <file> 33</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 37 35 53 55 18 22 29 51 20 58 30 56 10 6 32 36 21 33 27 12 48 19 26 28 24 23</file>
+          <file> 11 9 27 29 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 58 2 56 55</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 37 35 53 55 16 18 22 29 51 20 58 30 56 10 6 32 36 21 33 27 12 48 19 26 28 24 23</file>
+          <file> 11 9 27 29 44 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 58 2 56 55</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\ParTest\ParTest.c</name>
+      <name>$PROJ_DIR$\Debug\Exe\Moose.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 23 12 17 33 31 43 20 48 46 5 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 14 8</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Source\list.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 25</file>
+          <file> 41</file>
         </tool>
         <tool>
           <name>ICC430</name>
@@ -244,11 +152,118 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 30 56 35 53 55 18 22 29 51 10 6 32 36 21 33 27 12 48 19 26 28</file>
+          <file> 11 9 27 29 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 2</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 30 56 35 53 55 16 18 22 29 51 10 6 32 36 21 33 27 12 48 19 26 28</file>
+          <file> 11 9 27 29 44 45 54 3 25 4 30 42 38 6 10 53 7 59 50 21 51 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\port.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4 30 9 27 29 45 54 3 25 42 38 6 10 53 7 59 50 21 51 58 2</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 4 30 9 27 29 44 45 54 3 25 42 38 6 10 53 7 59 50 21 51 58 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Source\portable\IAR\MSP430X\portext.s43</name>
+      <outputs>
+        <tool>
+          <name>A430</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A430</name>
+          <file> 50 21 38 6 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Source\tasks.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 52 9 27 29 45 54 3 25 32 11 18 4 30 42 38 6 10 53 7 59 50 21 51 58 2 28 13</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 52 9 27 29 44 45 54 3 25 32 11 18 4 30 42 38 6 10 53 7 59 50 21 51 58 2 28 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 11 9 27 29 45 54 3 25 52 32 4 30 42 38 6 10 53 7 59 50 21 51 58 2 56 55</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 11 9 27 29 44 45 54 3 25 52 32 4 30 42 38 6 10 53 7 59 50 21 51 58 2 56 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\ParTest\ParTest.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4 30 9 27 29 45 54 3 25 42 38 6 10 53 7 59 50 21 51 58 2</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 4 30 9 27 29 44 45 54 3 25 42 38 6 10 53 7 59 50 21 51 58 2</file>
         </tool>
       </inputs>
     </file>
@@ -257,22 +272,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 25 41 52 9 50 13 45</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\Moose.d43</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 49 38 43 59 57 11 46 14 17 31 42</file>
+          <file> 57 15 26 41 24 49 19</file>
         </tool>
       </inputs>
     </file>

@@ -147,7 +147,7 @@ int main( void )
     {
       
         /* Setup the microcontroller hardware for the demo. */
-        //prvSetupHardware(); ---> this for some reason bloks the LED task but not other tasks
+        prvSetupHardware(); //---> this for some reason bloks the LED task but not other tasks
 	vParTestInitialise();
 
         /* Start the standard demo application tasks. */
